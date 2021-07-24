@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"golang-learning/src/main/golean/chapter-07-object/service"
+	service2 "golang-learning/chapter-07-object/service"
 )
 
 type customerView struct {
 	key             string //接收用户输入
 	loop            bool   //表示是否循环的显示主菜单
-	customerService *service.CustomerService
+	customerService *service2.CustomerService
 }
 
 func (this customerView) List() {
@@ -59,7 +59,7 @@ func main() {
 		key:  "",
 		loop: false,
 	}
-	view.customerService = service.NewCustomerService()
+	view.customerService = service2.NewCustomerService()
 	view.mainMenu()
 
 }
