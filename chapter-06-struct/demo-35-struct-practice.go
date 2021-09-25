@@ -63,6 +63,10 @@ type Person struct {
 	Age  int
 }
 
+func (p *Person) eat(name, pass string) string {
+	return ""
+}
+
 type A struct {
 	Num int
 }

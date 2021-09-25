@@ -12,7 +12,6 @@ func main() {
 	source := "/Users/lilin/Documents/doc.txt"
 	target := "/Users/lilin/Documents/doc_target.txt"
 	copy := "/Users/lilin/Documents/doc_copy.txt"
-
 	exist, err2 := pathExist(source)
 	fmt.Println(exist, err2)
 	file, err := ioutil.ReadFile(source)

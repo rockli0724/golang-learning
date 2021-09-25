@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"learn-go/src/main/golean/chapter-02-func/pkg/util"
+	"golang-learning/chapter-02-func/pkg/util"
 )
 
 var age = test()
