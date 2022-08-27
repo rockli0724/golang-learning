@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go/types"
+)
 
 //global constant-1, 全局变量声明方式1
 var lilin = 10000
@@ -15,6 +18,14 @@ var (
 
 func main() {
 	//定义变量/声明变量
+
+
+
+	s3 := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	s4 := s3[3:6]
+	fmt.Printf("The length of s4: %d\n", len(s4))//3
+	fmt.Printf("The capacity of s4: %d\n", cap(s4))//3
+	fmt.Printf("The value of s4: %d\n", s4)//4,5,6
 	var i int
 	//变量复值
 	i = 10

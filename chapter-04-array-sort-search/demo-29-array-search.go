@@ -16,8 +16,19 @@ import "fmt"
 */
 
 func main() {
-	var arr = [6]int{1, 45, 46, 50, 100, 123}
-	binaryFind(&arr, 0, len(arr), 50)
+	//var arr = [6]int{1, 45, 46, 50, 100, 123}
+	//binaryFind(&arr, 0, len(arr), 50)
+
+	actions := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+	batchSize := 3
+	batches := make([][]int, 0, (len(actions)+batchSize-1)/batchSize)
+
+	for batchSize < len(actions) {
+		actions, batches = actions[batchSize:], append(batches, actions[0:batchSize:batchSize])
+
+	}
+	batches = append(batches, actions)
+	fmt.Println(batches)
 
 }
 
