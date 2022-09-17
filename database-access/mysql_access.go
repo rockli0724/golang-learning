@@ -111,6 +111,23 @@ func queryAlbumById(id int64) (Album, error) {
 	return album, nil
 }
 
+//queryAlbumById queryAlbumById
+func queryPreAlbumById(id int64) (Album, error) {
+
+	prepare, err := db.Prepare("SELECT * FROM album WHERE id = ?")
+	if err != nil {
+		log.Fatal(err)
+	}
+	var album Album
+	if err = prepare.QueryRow(id).Scan(&album.ID, &album.Title, &album.Artist, &album.Price); err != nil {
+		if err == sql.ErrNoRows {
+			return album, fmt.Errorf("albumsById %d: no such album", id)
+		}
+		return album, fmt.Errorf("queryAlbumById %d: %v", id, err)
+	}
+	return album, nil
+}
+
 // addAlbum adds the specified album to the database,
 // returning the album ID of the new entry
 func addAlbum(alb Album) (int64, error) {
